@@ -8,3 +8,4 @@ Tom Phoenix, 978-1-449-39309-0.
 ```
 - [ch01 Introduction](ch01/)
 - [ch02 Using Modules](ch02/)
+- [ch03 Intermediate Foundations](ch03/)
