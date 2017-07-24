@@ -10,3 +10,4 @@ Tom Phoenix, 978-1-449-39309-0.
 - [ch02 Using Modules](ch02/)
 - [ch03 Intermediate Foundations](ch03/)
 - [ch04 Introduction to References](ch04/)
+- [ch05 References and Scoping](ch05/)
