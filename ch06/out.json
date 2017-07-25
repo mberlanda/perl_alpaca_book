@@ -1,0 +1,13 @@
+{
+   "ginger.girl.hut" : {
+      "professor.hut" : 1218,
+      "maryann.girl.hut" : 199
+   },
+   "professor.hut" : {
+      "lovey.howell.hut" : 1360,
+      "gilligan.crew.hut" : 1250
+   },
+   "thurston.howell.hut" : {
+      "lovey.howell.hut" : 1250
+   }
+}
