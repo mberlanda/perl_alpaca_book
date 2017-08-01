@@ -13,3 +13,4 @@ Tom Phoenix, 978-1-449-39309-0.
 - [ch05 References and Scoping](ch05/)
 - [ch06 Manipulating Complex Data Structures](ch06/)
 - [ch07 Subroutine References](ch07/)
+- [ch08 Filehandle References](ch08/)
