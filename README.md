@@ -16,3 +16,4 @@ Tom Phoenix, 978-1-449-39309-0.
 - [ch08 Filehandle References](ch08/)
 - [ch09 Regular Expression References](ch09/)
 - [ch10 Practical Reference Tricks](ch10/)
+- [ch11 Building Larger Programs](ch11/)
