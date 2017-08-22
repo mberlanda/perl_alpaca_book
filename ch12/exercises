@@ -1,0 +1,83 @@
+=head1 ch 12 Excercises
+
+=head2 Ex 01
+
+Create your own B<Animal> distribution with B<Module::Starter> by running
+I<module-starter> from the command line. Build the distribution and run the tests.
+Since you haven't changed anything, all the tests should pass.
+To see what happens when you have an error in your module, create some sort of
+syntax error in I<Animal.pm>. Rerun the tests. The tests should fail this time. Don't
+worry about messing anything up because you can just rerun B<module-starter> !
+
+  $ module-starter --module=Animal --author=kupta --email="kupta@cpan.org" --verbose
+  $ cd Animal/
+    Checking if your kit is complete...
+    Looks good
+    Generating a Unix-style Makefile
+    Writing Makefile for Animal
+    Writing MYMETA.yml and MYMETA.json
+  $ make
+    cp lib/Animal.pm blib/lib/Animal.pm
+    Manifying 1 pod document
+  $ make test
+    PERL_DL_NONLAZY=1 "/usr/bin/perl" "-MExtUtils::Command::MM" "-MTest::Harness" "-e" "undef *Test::Harness::Switches; test_harness(0, 'blib/lib', 'blib/arch')" t/*.t
+    t/00-load.t ....... 1/? # Testing Animal 0.01, Perl 5.022001, /usr/bin/perl
+    t/00-load.t ....... ok
+    t/manifest.t ...... skipped: Author tests not required for installation
+    t/pod-coverage.t .. skipped: Author tests not required for installation
+    t/pod.t ........... skipped: Author tests not required for installation
+    All tests successful.
+    Files=4, Tests=1,  0 wallclock secs ( 0.03 usr  0.00 sys +  0.15 cusr  0.00 csys =  0.18 CPU)
+    Result: PASS
+  # Added Error to lib/Animal.pm
+  $ make test
+    cp lib/Animal.pm blib/lib/Animal.pm
+    t/00-load.t ....... 1/?
+    #   Failed test 'use Animal;'
+    #   at t/00-load.t line 10.
+    #     Tried to use 'Animal'.
+    #     Error:  "use" not allowed in expression at
+
+=head2 Ex 02
+
+Setup your B<Module::Starter> configuration file with your name and
+email address then redo Exercise 1, replacing the B<Animal> distribution.
+
+  $ cd && mkdir .module-starter
+  $ touch .module-starter/config
+  $ nano .module-starter/config
+
+    author: Mauro Berlanda
+    email: kupta@cpan.org
+    builder: Module::Build
+    verbose: 1
+
+  $ module-starter --module=Animal
+  $ cd Animal/
+  $ perl Build.PL
+  $ ./Build test
+    t/00-load.t ....... 1/? # Testing Animal 0.01, Perl 5.022001, /usr/bin/perl
+    t/00-load.t ....... ok
+    t/manifest.t ...... skipped: Author tests not required for installation
+    t/pod-coverage.t .. skipped: Author tests not required for installation
+    t/pod.t ........... skipped: Author tests not required for installation
+    All tests successful.
+    Files=4, Tests=1,  1 wallclock secs ( 0.02 usr  0.00 sys +  0.15 cusr  0.00 csys =  0.17 CPU)
+    Result: PASS
+
+
+=head2 Ex 03
+
+Download and install the B<Module::Starter::AddModule> . Add the
+plug-in to your B<Module::Starter> configuration file. Add the B<Cow> module to your
+distribution.
+
+  $ cpan -I Module::Starter::AddModule
+  # .module-starter/config
+    ...
+    plugins: Module::Starter::AddModule
+  /Animal $ module-starter --module=Cow --dist=.
+
+
+C<< pod2html exercises > exercises.html >>
+=cut

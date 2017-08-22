@@ -1,0 +1,102 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#ch-12-Excercises">ch 12 Excercises</a>
+    <ul>
+      <li><a href="#Ex-01">Ex 01</a></li>
+      <li><a href="#Ex-02">Ex 02</a></li>
+      <li><a href="#Ex-03">Ex 03</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="ch-12-Excercises">ch 12 Excercises</h1>
+
+<h2 id="Ex-01">Ex 01</h2>
+
+<p>Create your own <b>Animal</b> distribution with <b>Module::Starter</b> by running <i>module-starter</i> from the command line. Build the distribution and run the tests. Since you haven&#39;t changed anything, all the tests should pass. To see what happens when you have an error in your module, create some sort of syntax error in <i>Animal.pm</i>. Rerun the tests. The tests should fail this time. Don&#39;t worry about messing anything up because you can just rerun <b>module-starter</b> !</p>
+
+<pre><code>  $ module-starter --module=Animal --author=kupta --email=&quot;kupta@cpan.org&quot; --verbose
+  $ cd Animal/
+    Checking if your kit is complete...
+    Looks good
+    Generating a Unix-style Makefile
+    Writing Makefile for Animal
+    Writing MYMETA.yml and MYMETA.json
+  $ make
+    cp lib/Animal.pm blib/lib/Animal.pm
+    Manifying 1 pod document
+  $ make test
+    PERL_DL_NONLAZY=1 &quot;/usr/bin/perl&quot; &quot;-MExtUtils::Command::MM&quot; &quot;-MTest::Harness&quot; &quot;-e&quot; &quot;undef *Test::Harness::Switches; test_harness(0, &#39;blib/lib&#39;, &#39;blib/arch&#39;)&quot; t/*.t
+    t/00-load.t ....... 1/? # Testing Animal 0.01, Perl 5.022001, /usr/bin/perl
+    t/00-load.t ....... ok
+    t/manifest.t ...... skipped: Author tests not required for installation
+    t/pod-coverage.t .. skipped: Author tests not required for installation
+    t/pod.t ........... skipped: Author tests not required for installation
+    All tests successful.
+    Files=4, Tests=1,  0 wallclock secs ( 0.03 usr  0.00 sys +  0.15 cusr  0.00 csys =  0.18 CPU)
+    Result: PASS
+  # Added Error to lib/Animal.pm
+  $ make test
+    cp lib/Animal.pm blib/lib/Animal.pm
+    t/00-load.t ....... 1/?
+    #   Failed test &#39;use Animal;&#39;
+    #   at t/00-load.t line 10.
+    #     Tried to use &#39;Animal&#39;.
+    #     Error:  &quot;use&quot; not allowed in expression at</code></pre>
+
+<h2 id="Ex-02">Ex 02</h2>
+
+<p>Setup your <b>Module::Starter</b> configuration file with your name and email address then redo Exercise 1, replacing the <b>Animal</b> distribution.</p>
+
+<pre><code>  $ cd &amp;&amp; mkdir .module-starter
+  $ touch .module-starter/config
+  $ nano .module-starter/config
+
+    author: Mauro Berlanda
+    email: kupta@cpan.org
+    builder: Module::Build
+    verbose: 1
+
+  $ module-starter --module=Animal
+  $ cd Animal/
+  $ perl Build.PL
+  $ ./Build test
+    t/00-load.t ....... 1/? # Testing Animal 0.01, Perl 5.022001, /usr/bin/perl
+    t/00-load.t ....... ok
+    t/manifest.t ...... skipped: Author tests not required for installation
+    t/pod-coverage.t .. skipped: Author tests not required for installation
+    t/pod.t ........... skipped: Author tests not required for installation
+    All tests successful.
+    Files=4, Tests=1,  1 wallclock secs ( 0.02 usr  0.00 sys +  0.15 cusr  0.00 csys =  0.17 CPU)
+    Result: PASS</code></pre>
+
+<h2 id="Ex-03">Ex 03</h2>
+
+<p>Download and install the <b>Module::Starter::AddModule</b> . Add the plug-in to your <b>Module::Starter</b> configuration file. Add the <b>Cow</b> module to your distribution.</p>
+
+<pre><code>  $ cpan -I Module::Starter::AddModule
+  # .module-starter/config
+    ...
+    plugins: Module::Starter::AddModule
+  /Animal $ module-starter --module=Cow --dist=.</code></pre>
+
+<p><code>pod2html exercises &gt; exercises.html</code></p>
+
+
+</body>
+
+</html>
+
+
