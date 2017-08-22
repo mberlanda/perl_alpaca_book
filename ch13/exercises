@@ -1,0 +1,81 @@
+=head1 ch 13 Exercises
+
+=head2 Ex 01
+
+Create the B<Animal>, B<Cow>, B<Horse>, B<Sheep>, and B<Mouse> classes. Run the test
+target for your distribution to ensure that they all compile correctly (that is, your
+I<t/00-load.t> test passes). Change what you need to get the tests to pass.
+
+  $ ./Build test
+    t/00-load.t ....... 1/? # Testing Animal 0.01, Perl 5.022001, /usr/bin/perl
+    t/00-load.t ....... ok
+    t/manifest.t ...... skipped: Author tests not required for installation
+    t/pod-coverage.t .. skipped: Author tests not required for installation
+    t/pod.t ........... skipped: Author tests not required for installation
+    All tests successful.
+    Files=4, Tests=5,  1 wallclock secs ( 0.03 usr  0.00 sys +  0.16 cusr  0.00 csys =  0.19 CPU)
+    Result: PASS
+
+=head2 Ex 02
+
+Create a program to ask the user to enter the names of one or more
+barnyard animals. Create a barnyard with those animals, and have each animal
+speak once.
+
+  $ touch scripts/barnyard.pl
+  $ perl -Ilib scripts/barnyard.pl
+    enter an animal (empty to finish): Cow
+    enter an animal (empty to finish): Horse
+    enter an animal (empty to finish): Cat
+    a Cow goes moooo!
+    a Horse goes neigh!
+
+=head2 Ex 03
+
+Add a B<Person> class at the same level as B<Animal> , and have both of them
+inherit from a new class called LivingCreature . Also make the speak method take
+a parameter of what to say, falling back to the sound (humming for a B<Person> ) if no
+parameter is given. Since this isn't Dr. Doolittle, make sure the animals can't talk.
+(That is, don't let B<speak> have any parameters for an animal.) Try not to duplicate
+any code, but be sure to catch likely errors of usage, such as forgetting to define a
+B<sound> for an animal.
+Demonstrate the B<Person> class in a program in scripts/person.pl. Make the person
+say "Hello, World!"
+
+  $ touch scripts/person.pl
+  $ module-starter --module=LivingCreature,Person --dist=.
+  # Edit t/00-load.t
+
+  # lib/LivingCreature.pm
+  package LivingCreature {
+
+    our $VERSION = '0.01';
+
+    sub speak {
+      my $class = shift;
+      if (@_) { print "a $class goes '@_'\n"; }
+      else { print "a $class goes ", $class->sound, "\n"; }
+    }
+  }
+  1;
+
+  # lib/Animal.pm
+  ...
+  use parent qw(LivingCreature);
+  sub speak {
+    my $class = shift;
+    die "animals can't talk!" if @_;
+    #print "a $class goes ", $class->sound, "!\n";
+    $class->SUPER::speak;
+  }
+
+  # lib/Person.pm
+  package Person {
+    use parent qw(LivingCreature);
+    sub sound { "hmmmm" }
+  }
+  1;
+
+  $ perl -Ilib scripts/person.pl
+
+=cut

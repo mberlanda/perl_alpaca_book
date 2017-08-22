@@ -1,0 +1,97 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#ch-13-Exercises">ch 13 Exercises</a>
+    <ul>
+      <li><a href="#Ex-01">Ex 01</a></li>
+      <li><a href="#Ex-02">Ex 02</a></li>
+      <li><a href="#Ex-03">Ex 03</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="ch-13-Exercises">ch 13 Exercises</h1>
+
+<h2 id="Ex-01">Ex 01</h2>
+
+<p>Create the <b>Animal</b>, <b>Cow</b>, <b>Horse</b>, <b>Sheep</b>, and <b>Mouse</b> classes. Run the test target for your distribution to ensure that they all compile correctly (that is, your <i>t/00-load.t</i> test passes). Change what you need to get the tests to pass.</p>
+
+<pre><code>  $ ./Build test
+    t/00-load.t ....... 1/? # Testing Animal 0.01, Perl 5.022001, /usr/bin/perl
+    t/00-load.t ....... ok
+    t/manifest.t ...... skipped: Author tests not required for installation
+    t/pod-coverage.t .. skipped: Author tests not required for installation
+    t/pod.t ........... skipped: Author tests not required for installation
+    All tests successful.
+    Files=4, Tests=5,  1 wallclock secs ( 0.03 usr  0.00 sys +  0.16 cusr  0.00 csys =  0.19 CPU)
+    Result: PASS</code></pre>
+
+<h2 id="Ex-02">Ex 02</h2>
+
+<p>Create a program to ask the user to enter the names of one or more barnyard animals. Create a barnyard with those animals, and have each animal speak once.</p>
+
+<pre><code>  $ touch scripts/barnyard.pl
+  $ perl -Ilib scripts/barnyard.pl
+    enter an animal (empty to finish): Cow
+    enter an animal (empty to finish): Horse
+    enter an animal (empty to finish): Cat
+    a Cow goes moooo!
+    a Horse goes neigh!</code></pre>
+
+<h2 id="Ex-03">Ex 03</h2>
+
+<p>Add a <b>Person</b> class at the same level as <b>Animal</b> , and have both of them inherit from a new class called LivingCreature . Also make the speak method take a parameter of what to say, falling back to the sound (humming for a <b>Person</b> ) if no parameter is given. Since this isn&#39;t Dr. Doolittle, make sure the animals can&#39;t talk. (That is, don&#39;t let <b>speak</b> have any parameters for an animal.) Try not to duplicate any code, but be sure to catch likely errors of usage, such as forgetting to define a <b>sound</b> for an animal. Demonstrate the <b>Person</b> class in a program in scripts/person.pl. Make the person say &quot;Hello, World!&quot;</p>
+
+<pre><code>  $ touch scripts/person.pl
+  $ module-starter --module=LivingCreature,Person --dist=.
+  # Edit t/00-load.t
+
+  # lib/LivingCreature.pm
+  package LivingCreature {
+
+    our $VERSION = &#39;0.01&#39;;
+
+    sub speak {
+      my $class = shift;
+      if (@_) { print &quot;a $class goes &#39;@_&#39;\n&quot;; }
+      else { print &quot;a $class goes &quot;, $class-&gt;sound, &quot;\n&quot;; }
+    }
+  }
+  1;
+
+  # lib/Animal.pm
+  ...
+  use parent qw(LivingCreature);
+  sub speak {
+    my $class = shift;
+    die &quot;animals can&#39;t talk!&quot; if @_;
+    #print &quot;a $class goes &quot;, $class-&gt;sound, &quot;!\n&quot;;
+    $class-&gt;SUPER::speak;
+  }
+
+  # lib/Person.pm
+  package Person {
+    use parent qw(LivingCreature);
+    sub sound { &quot;hmmmm&quot; }
+  }
+  1;
+
+  $ perl -Ilib scripts/person.pl</code></pre>
+
+
+</body>
+
+</html>
+
+

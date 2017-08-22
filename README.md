@@ -18,3 +18,4 @@ Tom Phoenix, 978-1-449-39309-0.
 - [ch10 Practical Reference Tricks](ch10/)
 - [ch11 Building Larger Programs](ch11/)
 - [ch12 Creating Your Own Perl Distribution](ch12/)
+- [ch13 Introduction to Objects](ch13/)

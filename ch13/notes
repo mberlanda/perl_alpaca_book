@@ -1,0 +1,51 @@
+=head1 Introduction to Objects
+
+=head2 If We Could Talk to the Animals...
+
+  $ module-starter --module=Animal
+  $ cd Animal/
+  Animal/ $ module-starter --module=Cow,Horse,Sheep --dist=.
+    Found ..  Use --force if you want to stomp on it.
+    Skipped lib/Animal.pm
+    Created lib/Cow.pm
+    Created lib/Horse.pm
+    Created lib/Sheep.pm
+
+In I<Cow.pm>:
+  sub speak {
+    print "a Cow goes moooo!\n";
+  }
+In I<Horse.pm>:
+  sub speak {
+    print "a Horse goes neigh!\n";
+  }
+In I<Sheep.pm>:
+  sub speak {
+    print "a Sheep goes baaaah!\n";
+  }
+
+  Animal/ $ mkdir scripts && touch scripts/pasture
+  Animal/ $ perl -Ilib scripts/pasture
+
+
+=head2 A Few Notes About @ISA
+
+  @Cow::ISA = qw(Animal);
+
+  package Cow;
+  use vars qw(@ISA);
+  @ISA = qw(Animal);
+
+  package Cow;
+  use Animal;
+  our @ISA = qw(Animal);
+
+  use v5.10.1;
+  package Cow;
+  use parent qw(Animal);
+
+=head2 Overriding the Methods
+
+  Animal/ $ module-starter --module=Mouse --dist=.
+
+=cut
