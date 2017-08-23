@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#ch-13-Exercises">ch 13 Exercises</a>
+    <ul>
+      <li><a href="#Ex-01">Ex 01</a></li>
+      <li><a href="#Ex-02">Ex 02</a></li>
+      <li><a href="#Ex-03">Ex 03</a></li>
+      <li><a href="#Ex-04">Ex 04</a></li>
+      <li><a href="#Ex-05">Ex 05</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="ch-13-Exercises">ch 13 Exercises</h1>
+
+<h2 id="Ex-01">Ex 01</h2>
+
+<p>Write a module distribution, starting from the tests first. Create a module <b>My::List::Util</b> that has two routines: <b>sum</b> and <b>shuffle</b> . The <b>sum</b> routine takes a list of values and returns the numeric sum. The <b>shuffle</b> routine takes a list of values and randomly shuffles the ordering, returning the list. Start with <b>sum</b> . Write the tests, and then add the code. You&#39;ll know you&#39;re done when the tests pass. Now include tests for <b>shuffle</b>, and then add the implemen- tation for shuffle. You might peek in the <b>perlfaq4</b> or List::Util to find a shuffle implementation.</p>
+
+<p>Be sure to update the documentation and MANIFEST file as you go along.</p>
+
+<p>Save your distribution for the exercies in Chapter 17 and Chapter 20.</p>
+
+<pre><code>  $ module-starter --module=My::List::Util
+  $ cd My-List-Util</code></pre>
+
+<h2 id="Ex-02">Ex 02</h2>
+
+<p>Add the t/Animal.t test to your distribution and get it working. As you add parts of the tests, run the test suite before you add the next part of the tests.</p>
+
+<h2 id="Ex-03">Ex 03</h2>
+
+<p>Create test files for the Cow , Horse , and Sheep classes. Add a test to ensure that each class compiles. Add tests to check the sound method for each class.</p>
+
+<h2 id="Ex-04">Ex 04</h2>
+
+<p>Use Devel::Cover to measure your test suite coverage. Since you haven&#39;t fully tested the Cow , Horse , and Sheep classes, you should see that you have low numbers for the coverage metrics. That&#39;s okay, since you&#39;ll fix that in the next exercise.</p>
+
+<pre><code>  $ sudo cpanm -i Devel::Cover
+  $ ./Build testcover
+  $ cover</code></pre>
+
+<h2 id="Ex-05">Ex 05</h2>
+
+<p>Finish your Cow , Horse , and Sheep tests so that you get perfect numbers for your test coverage (or close enough). Test the sound and speak methods for each animal and complete the documentation.</p>
+
+<pre><code>  $ ./Build testcover
+  $ cover
+  $ open cover_db/coverage.html
+
+  ---------------------------- ------ ------ ------ ------ ------ ------ ------
+  File                           stmt   bran   cond    sub    pod   time  total
+  ---------------------------- ------ ------ ------ ------ ------ ------ ------
+  blib/lib/Animal.pm            100.0  100.0    n/a  100.0  100.0   22.9  100.0
+  blib/lib/Cow.pm               100.0    n/a    n/a  100.0  100.0   13.0  100.0
+  blib/lib/Horse.pm             100.0    n/a    n/a  100.0  100.0   12.9  100.0
+  blib/lib/LivingCreature.pm    100.0  100.0    n/a  100.0    0.0    8.3   87.5
+  blib/lib/Mouse.pm             100.0    n/a    n/a  100.0  100.0   16.5  100.0
+  blib/lib/Person.pm            100.0    n/a    n/a  100.0    0.0   13.1   85.7
+  blib/lib/Sheep.pm             100.0    n/a    n/a  100.0  100.0   13.0  100.0
+  Total                         100.0  100.0    n/a  100.0   77.7  100.0   98.1
+  ---------------------------- ------ ------ ------ ------ ------ ------ ------</code></pre>
+
+
+</body>
+
+</html>
+
+

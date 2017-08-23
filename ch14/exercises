@@ -1,0 +1,64 @@
+=head1 ch 13 Exercises
+
+=head2 Ex 01
+
+Write a module distribution, starting from the tests first. Create a
+module B<My::List::Util> that has two routines: B<sum> and B<shuffle> . The B<sum> routine
+takes a list of values and returns the numeric sum. The B<shuffle> routine takes a list
+of values and randomly shuffles the ordering, returning the list.
+Start with B<sum> . Write the tests, and then add the code. You'll know you're done
+when the tests pass. Now include tests for B<shuffle>, and then add the implemen-
+tation for shuffle. You might peek in the B<perlfaq4> or List::Util to find a shuffle
+implementation.
+
+Be sure to update the documentation and MANIFEST file as you go along.
+
+Save your distribution for the exercies in Chapter 17 and Chapter 20.
+
+  $ module-starter --module=My::List::Util
+  $ cd My-List-Util
+
+=head2 Ex 02
+
+Add the t/Animal.t test to your distribution and get it working. As
+you add parts of the tests, run the test suite before you add the next part of the tests.
+
+=head2 Ex 03
+
+Create test files for the Cow , Horse , and Sheep classes. Add a test to
+ensure that each class compiles. Add tests to check the sound method for each class.
+
+=head2 Ex 04
+
+Use Devel::Cover to measure your test suite coverage. Since you haven't fully tested the Cow , Horse , and Sheep classes, you should see that you have
+low numbers for the coverage metrics. That's okay, since you'll fix that in the next
+exercise.
+
+  $ sudo cpanm -i Devel::Cover
+  $ ./Build testcover
+  $ cover
+
+=head2 Ex 05
+
+Finish your Cow , Horse , and Sheep tests so that you get perfect numbers
+for your test coverage (or close enough). Test the sound and speak methods for each
+animal and complete the documentation.
+
+  $ ./Build testcover
+  $ cover
+  $ open cover_db/coverage.html
+
+  ---------------------------- ------ ------ ------ ------ ------ ------ ------
+  File                           stmt   bran   cond    sub    pod   time  total
+  ---------------------------- ------ ------ ------ ------ ------ ------ ------
+  blib/lib/Animal.pm            100.0  100.0    n/a  100.0  100.0   22.9  100.0
+  blib/lib/Cow.pm               100.0    n/a    n/a  100.0  100.0   13.0  100.0
+  blib/lib/Horse.pm             100.0    n/a    n/a  100.0  100.0   12.9  100.0
+  blib/lib/LivingCreature.pm    100.0  100.0    n/a  100.0    0.0    8.3   87.5
+  blib/lib/Mouse.pm             100.0    n/a    n/a  100.0  100.0   16.5  100.0
+  blib/lib/Person.pm            100.0    n/a    n/a  100.0    0.0   13.1   85.7
+  blib/lib/Sheep.pm             100.0    n/a    n/a  100.0  100.0   13.0  100.0
+  Total                         100.0  100.0    n/a  100.0   77.7  100.0   98.1
+  ---------------------------- ------ ------ ------ ------ ------ ------ ------
+
+=cut
