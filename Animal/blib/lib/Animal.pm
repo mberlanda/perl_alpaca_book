@@ -4,6 +4,8 @@ use 5.006;
 use strict;
 use warnings;
 
+use Carp qw(croak);
+
 =head1 NAME
 
 Animal
@@ -15,6 +17,7 @@ Version 0.01
 =cut
 
 our $VERSION = '0.01';
+use parent qw(LivingCreature);
 
 
 =head1 SYNOPSIS
@@ -33,17 +36,154 @@ if you don't export anything, such as for a purely object-oriented module.
 
 =head1 SUBROUTINES/METHODS
 
-=head2 speak
+=head2 name
+
+First implementation:
+sub name {
+  my $self = shift;
+  $$self;
+}
+
+sub name {
+  my $either = shift;
+  ref $either ? $$either # it's an instance, return name
+  : "an unnamed $either"; # it's a class, return generic
+}
 
 =cut
 
-use parent qw(LivingCreature);
+sub name {
+  my $either = shift;
+  ref $either ? $either->{Name} : "an unnamed $either";
+}
 
+=head2 named
+This method is a constructor for the Horse object
+
+sub named {
+  my $class = shift;
+  my $name = shift;
+  bless \$name, $class;
+}
+=cut
+
+sub named {
+  my $class = shift;
+  my $name = shift;
+  my $self = { Name => $name, Color => $class->default_color };
+  bless $self, $class;
+}
+
+=head2 set_name
+sub set_name { $_[0]->{Name} = $_[1] }
+=cut
+sub set_name {
+  ref(my $self = shift) or croak "instance variable needed";
+  $self->{Name} = shift;
+}
+
+=head2 color
+
+use Color::Conversions qw(color_name_to_rgb rgb_to_color_name);
+sub set_color {
+  my $self = shift;
+  my $new_color = shift;
+  $self->{Color} = color_name_to_rgb($new_color);
+}
+sub color {
+  my $self = shift;
+  rgb_to_color_name($self->{Color});
+}
+sub set_color_rgb {
+  my $self = shift;
+  $self->{Color} = [@_];
+}
+sub get_color_rgb {
+  my $self = shift;
+  @{ $self->{Color} };
+}
+
+Original implementation:
+
+sub color {
+  my $self = shift;
+  $self->{Color};
+}
+sub color { $_[0]->{Color} }
+
+=cut
+
+sub color {
+  my $either = shift;
+  ref $either ? $either->{Color} : $either->default_color;
+}
+
+=head2 set_color
+
+# Return the previous value
+sub set_color {
+  my $self = shift;
+  my $old = $self->{Color};
+  $self->{Color} = shift;
+  $old;
+}
+
+sub set_color {
+  my $self = shift;
+  if (defined wantarray) {
+    # this method call is not in void context, so
+    # the return value matters
+    my $old = $self->{Color};
+    $self->{Color} = shift;
+    $old;
+  } else {
+    # this method call is in void context
+    $self->{Color} = shift;
+  }
+}
+# Return the object itself
+sub set_color {
+  my $self = shift;
+  $self->{Color} = shift;
+  $self;
+}
+
+Original implementation:
+sub set_color {
+  my $self = shift;
+  $self->{Color} = shift;
+}
+
+sub set_color { $_[0]->{Color} = $_[1] }
+
+=cut
+
+sub set_color {
+  ref(my $self = shift) or croak "instance variable needed";
+  $self->{Color} = shift;
+}
+
+=head2 default_color
+
+=cut
+
+sub default_color { 'brown' }
+
+=head2 speak
+First implementation:
 sub speak {
   my $class = shift;
   die "animals can't talk!" if @_;
   #print "a $class goes ", $class->sound, "!\n";
   $class->SUPER::speak;
+}
+
+=cut
+
+sub speak {
+  my $either = shift;
+  die "animals can't talk!" if @_;
+  print $either->name, ' goes ', $either->sound, "\n";
 }
 
 =head2 sound
@@ -52,6 +192,14 @@ sub speak {
 
 sub sound { die "all Animals should define a sound" }
 
+=head2 eat
+
+=cut
+
+sub eat {
+  my ($either, $food) = @_;
+  print $either->name, " eats $food.\n";
+}
 =head1 AUTHOR
 
 Mauro Berlanda, C<< <kupta at cpan.org> >>

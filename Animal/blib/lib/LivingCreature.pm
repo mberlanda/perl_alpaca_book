@@ -12,6 +12,12 @@ Version 0.01
 
 =cut
 
+=head1 SUBROUTINES/METHODS
+
+=head2 speak
+
+=cut
+
   sub speak {
     my $class = shift;
     if (@_) { print "a $class goes '@_'\n"; }

@@ -53,6 +53,25 @@ use parent qw(Animal);
 
 sub sound { 'neigh' }
 
+=head2 name
+
+sub name {
+  my $self = shift;
+  $$self;
+}
+
+=cut
+
+=head2 named
+This method is a constructor for the Horse object
+sub named {
+  my ($class, $name) = @_;
+  bless \$name, $class;
+}
+
+=cut
+
+
 =head1 AUTHOR
 
 Mauro Berlanda, C<< <kupta at cpan.org> >>

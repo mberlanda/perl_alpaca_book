@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::More;
+use Test::More  tests => 4;
 use Test::Output;
 
 
@@ -18,8 +18,8 @@ is(Mouse->sound(), 'squeak', 'Mouse\'s sound() should be \'squeak\'');
 # check that speak()
 stdout_is(
   sub { Mouse->speak() },
-  "a Mouse goes squeak\n[but you can barely hear it!]\n",
+  "an unnamed Mouse goes squeak\n[but you can barely hear it!]\n",
   'A Mouse speaks as expected'
 );
 
-done_testing();
+# done_testing();

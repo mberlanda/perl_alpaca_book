@@ -53,6 +53,12 @@ use parent qw(Animal);
 
 sub sound { 'baaaah' }
 
+=head2 default_color
+
+=cut
+
+sub default_color { 'white' }
+
 =head1 AUTHOR
 
 Mauro Berlanda, C<< <kupta at cpan.org> >>

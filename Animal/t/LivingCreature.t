@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::More;
+use Test::More tests => 4;
 use Test::Output;
 
 BEGIN {
@@ -25,4 +25,4 @@ ok( defined &LivingCreature::speak, 'LivingCreature::speak is defined' );
       'An LivingCreature subclass speaks the default sound() if no args provided');
 }
 
-done_testing();
+# done_testing();

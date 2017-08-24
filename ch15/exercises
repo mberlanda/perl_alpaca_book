@@ -1,0 +1,19 @@
+=head1 ch 13 Exercises
+
+=head2 Ex 01
+Give the Animal class the ability to get and set the name and color. Be
+sure that your result works under use strict . Also make sure your get methods
+work with both a generic animal and a specific animal instance. Test your work
+with:
+
+  my $tv_horse = Horse->named('Mr. Ed');
+  $tv_horse->set_name('Mister Ed');
+  $tv_horse->set_color('grey');
+  print $tv_horse->name, ' is ', $tv_horse->color, "\n";
+  print Sheep->name, ' colored ', Sheep->color, ' goes ', Sheep->sound, "\n";
+
+What should you do if you’re asked to set the name or color of a generic animal?
+
+
+The solution is in Animal/scripts/horse-and-sheep.pl
+=cut
