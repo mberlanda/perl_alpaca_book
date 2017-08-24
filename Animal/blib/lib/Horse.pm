@@ -1,8 +1,13 @@
 package Horse;
 
-# use 5.006;
+use 5.006;
 use strict;
 use warnings;
+use parent qw(Animal);
+
+our $VERSION = '0.01';
+
+sub sound { 'neigh' }
 
 =head1 NAME
 
@@ -14,17 +19,10 @@ Version 0.01
 
 =cut
 
-our $VERSION = '0.01';
-
-
 =head1 SYNOPSIS
 
-Perhaps a little code snippet.
-
     use Horse;
-
-    my $foo = Horse->new();
-    ...
+    my $foo = Horse->named("blahblah");
 
 =head1 EXPORT
 
@@ -35,23 +33,9 @@ if you don't export anything, such as for a purely object-oriented module.
 
 =head2 speak
 
-sub speak {
-  my $class = shift;
-  # print "a $class goes neigh!\n";
-  print "a $class goes ", $class->sound, "!\n";
-}
-
-=cut
-
-# use Animal;
-# our @ISA = qw(Animal);
-use parent qw(Animal);
-
 =head2 sound
 
 =cut
-
-sub sound { 'neigh' }
 
 =head2 name
 
@@ -71,7 +55,6 @@ sub named {
 
 =cut
 
-
 =head1 AUTHOR
 
 Mauro Berlanda, C<< <kupta at cpan.org> >>
@@ -84,13 +67,11 @@ automatically be notified of progress on your bug as I make changes.
 
 
 
-
 =head1 SUPPORT
 
 You can find documentation for this module with the perldoc command.
 
     perldoc Horse
-
 
 You can also look for information at:
 
@@ -114,9 +95,7 @@ L<http://search.cpan.org/dist/./>
 
 =back
 
-
 =head1 ACKNOWLEDGEMENTS
-
 
 =head1 LICENSE AND COPYRIGHT
 
@@ -157,7 +136,6 @@ YOUR LOCAL LAW. UNLESS REQUIRED BY LAW, NO COPYRIGHT HOLDER OR
 CONTRIBUTOR WILL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, OR
 CONSEQUENTIAL DAMAGES ARISING IN ANY WAY OUT OF THE USE OF THE PACKAGE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 
 =cut
 

@@ -26,11 +26,45 @@ http://www.pjcj.net
 <table>
 <tr><th>line</th><th>stmt</th><th>bran</th><th>cond</th><th>sub</th><th>pod</th><th>time</th><th>code</th></tr>
 <tr><td class="h">1</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">package Animal;</td></tr>
-<tr><td class="h">2</td><td colspan="7"></td></tr><tr><td class="h">3</td><td><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L3">6</a></div></td><td></td><td><div>104319</div><div>19</div></td><td class="s">use 5.006;</td></tr>
-<tr><td class="h">4</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L4">6</a></div></td><td></td><td><div>25</div><div>8</div><div>91</div></td><td class="s">use strict;</td></tr>
-<tr><td class="h">5</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L5">6</a></div></td><td></td><td><div>21</div><div>18</div><div>143</div></td><td class="s">use warnings;</td></tr>
-<tr><td class="h">6</td><td colspan="7"></td></tr><tr><td class="h">7</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L7">6</a></div></td><td></td><td><div>22</div><div>8</div><div>348</div></td><td class="s">use Carp qw(croak);</td></tr>
-<tr><td class="h">8</td><td colspan="7"></td></tr><tr><td class="h">9 - 17</td><td colspan="6"></td><td class="s"><pre>=head1 NAME
+<tr><td class="h">2</td><td colspan="7"></td></tr><tr><td class="h">3</td><td><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L3">6</a></div></td><td></td><td><div>86713</div><div>16</div></td><td class="s">use 5.006;</td></tr>
+<tr><td class="h">4</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L4">6</a></div></td><td></td><td><div>19</div><div>17</div><div>86</div></td><td class="s">use strict;</td></tr>
+<tr><td class="h">5</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L5">6</a></div></td><td></td><td><div>17</div><div>6</div><div>120</div></td><td class="s">use warnings;</td></tr>
+<tr><td class="h">6</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L6">6</a></div></td><td></td><td><div>18</div><div>6</div><div>207</div></td><td class="s">use Carp qw(croak);</td></tr>
+<tr><td class="h">7</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L7">6</a></div></td><td></td><td><div>150</div><div>229</div><div>27</div></td><td class="s">use parent qw(LivingCreature);</td></tr>
+<tr><td class="h">8</td><td colspan="7"></td></tr><tr><td class="h">9</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">our $VERSION = &#39;0.01&#39;;</td></tr>
+<tr><td class="h">10</td><td colspan="7"></td></tr><tr><td class="h">11</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub named {</td></tr>
+<tr><td class="h">12</td><td><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L12">3</a></div></td><td><div class="c3">1</div></td><td><div>1753</div></td><td class="s">&nbsp;&nbsp;my ($class, $name) = @_;</td></tr>
+<tr><td class="h">13</td><td><div class="c3">3</div></td><td></td><td></td><td></td><td></td><td><div>20</div></td><td class="s">&nbsp;&nbsp;my $self = { Name =&gt; $name, Color =&gt; $class-&gt;default_color };</td></tr>
+<tr><td class="h">14</td><td><div class="c3">3</div></td><td></td><td></td><td></td><td></td><td><div>18</div></td><td class="s">&nbsp;&nbsp;bless $self, $class;</td></tr>
+<tr><td class="h">15</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
+<tr><td class="h">16</td><td colspan="7"></td></tr><tr><td class="h">17</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub name {</td></tr>
+<tr><td class="h">18</td><td><div class="c3">14</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L18">14</a></div></td><td><div class="c3">1</div></td><td><div>1923</div></td><td class="s">&nbsp;&nbsp;my $either = shift;</td></tr>
+<tr><td class="h">19</td><td><div class="c3">14</div></td><td><div class="c3" title="T/F"><a href="blib-lib-Animal-pm--branch.html#L19">100</a></div></td><td></td><td></td><td></td><td><div>204</div></td><td class="s">&nbsp;&nbsp;ref $either ? $either-&gt;{Name} : &quot;an unnamed $either&quot;;</td></tr>
+<tr><td class="h">20</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
+<tr><td class="h">21</td><td colspan="7"></td></tr><tr><td class="h">22</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub set_name {</td></tr>
+<tr><td class="h">23</td><td><div class="c3">3</div></td><td><div class="c3" title="T/F"><a href="blib-lib-Animal-pm--branch.html#L23">100</a></div></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L23">3</a></div></td><td><div class="c3">1</div></td><td><div>1262</div></td><td class="s">&nbsp;&nbsp;ref(my $self = shift) or croak &quot;instance variable needed&quot;;</td></tr>
+<tr><td class="h">24</td><td><div class="c3">2</div></td><td></td><td></td><td></td><td></td><td><div>9</div></td><td class="s">&nbsp;&nbsp;$self-&gt;{Name} = shift;</td></tr>
+<tr><td class="h">25</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
+<tr><td class="h">26</td><td colspan="7"></td></tr><tr><td class="h">27</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub color {</td></tr>
+<tr><td class="h">28</td><td><div class="c3">5</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L28">5</a></div></td><td><div class="c3">1</div></td><td><div>633</div></td><td class="s">&nbsp;&nbsp;my $either = shift;</td></tr>
+<tr><td class="h">29</td><td><div class="c3">5</div></td><td><div class="c3" title="T/F"><a href="blib-lib-Animal-pm--branch.html#L29">100</a></div></td><td></td><td></td><td></td><td><div>23</div></td><td class="s">&nbsp;&nbsp;ref $either ? $either-&gt;{Color} : $either-&gt;default_color;</td></tr>
+<tr><td class="h">30</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
+<tr><td class="h">31</td><td colspan="7"></td></tr><tr><td class="h">32</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub set_color {</td></tr>
+<tr><td class="h">33</td><td><div class="c3">3</div></td><td><div class="c3" title="T/F"><a href="blib-lib-Animal-pm--branch.html#L33">100</a></div></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L33">3</a></div></td><td><div class="c3">1</div></td><td><div>543</div></td><td class="s">&nbsp;&nbsp;ref(my $self = shift) or croak &quot;instance variable needed&quot;;</td></tr>
+<tr><td class="h">34</td><td><div class="c3">2</div></td><td></td><td></td><td></td><td></td><td><div>7</div></td><td class="s">&nbsp;&nbsp;$self-&gt;{Color} = shift;</td></tr>
+<tr><td class="h">35</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
+<tr><td class="h">36</td><td colspan="7"></td></tr><tr><td class="h">37</td><td><div class="c3">8</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L37">8</a></div></td><td><div class="c3">1</div></td><td><div>35</div></td><td class="s">sub default_color { &#39;brown&#39; }</td></tr>
+<tr><td class="h">38</td><td colspan="7"></td></tr><tr><td class="h">39</td><td><div class="c3">2</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L39">2</a></div></td><td><div class="c3">1</div></td><td><div>50941</div></td><td class="s">sub sound { die &quot;all Animals should define a sound&quot; }</td></tr>
+<tr><td class="h">40</td><td colspan="7"></td></tr><tr><td class="h">41</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub speak {</td></tr>
+<tr><td class="h">42</td><td><div class="c3">5</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L42">5</a></div></td><td><div class="c3">1</div></td><td><div>5916</div></td><td class="s">&nbsp;&nbsp;my $either = shift;</td></tr>
+<tr><td class="h">43</td><td><div class="c3">5</div></td><td><div class="c3" title="T/F"><a href="blib-lib-Animal-pm--branch.html#L43">100</a></div></td><td></td><td></td><td></td><td><div>48</div></td><td class="s">&nbsp;&nbsp;die &quot;animals can&#39;t talk!&quot; if @_;</td></tr>
+<tr><td class="h">44</td><td><div class="c3">4</div></td><td></td><td></td><td></td><td></td><td><div>23</div></td><td class="s">&nbsp;&nbsp;print $either-&gt;name, &#39; goes &#39;, $either-&gt;sound, &quot;\n&quot;;</td></tr>
+<tr><td class="h">45</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
+<tr><td class="h">46</td><td colspan="7"></td></tr><tr><td class="h">47</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub eat {</td></tr>
+<tr><td class="h">48</td><td><div class="c3">2</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L48">2</a></div></td><td><div class="c3">1</div></td><td><div>2212</div></td><td class="s">&nbsp;&nbsp;my ($either, $food) = @_;</td></tr>
+<tr><td class="h">49</td><td><div class="c3">2</div></td><td></td><td></td><td></td><td></td><td><div>11</div></td><td class="s">&nbsp;&nbsp;print $either-&gt;name, &quot; eats $food.\n&quot;;</td></tr>
+<tr><td class="h">50</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
+<tr><td class="h">51</td><td colspan="7"></td></tr><tr><td class="h">52 - 175</td><td colspan="6"></td><td class="s"><pre>=head1 NAME
 
 Animal
 
@@ -38,174 +72,42 @@ Animal
 
 Version 0.01
 
-=cut</pre></td></tr>
-<tr><td class="h">18</td><td colspan="7"></td></tr><tr><td class="h">19</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">our $VERSION = &#39;0.01&#39;;</td></tr>
-<tr><td class="h">20</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L20">6</a></div></td><td></td><td><div>162</div><div>196</div><div>31</div></td><td class="s">use parent qw(LivingCreature);</td></tr>
-<tr><td class="h">21</td><td colspan="7"></td></tr><tr><td class="h">22</td><td colspan="7"></td></tr><tr><td class="h">23 - 53</td><td colspan="6"></td><td class="s"><pre>=head1 SYNOPSIS
+=head1 SYNOPSIS
 
 Perhaps a little code snippet.
 
 &nbsp;&nbsp;&nbsp;&nbsp;use Animal;
-
-&nbsp;&nbsp;&nbsp;&nbsp;my $foo = Animal-&gt;new();
+&nbsp;&nbsp;&nbsp;&nbsp;my $foo = Animal-&gt;named(&quot;blahblah&quot;);
 &nbsp;&nbsp;&nbsp;&nbsp;...
-
-=head1 EXPORT
-
-A list of functions that can be exported.&nbsp;&nbsp;You can delete this section
-if you don&#39;t export anything, such as for a purely object-oriented module.
 
 =head1 SUBROUTINES/METHODS
 
+=head2 named
+This method is a constructor for the Animal object
+
 =head2 name
+This method is a getter
 
-First implementation:
-sub name {
-&nbsp;&nbsp;my $self = shift;
-&nbsp;&nbsp;$$self;
-}
+=head2 set_name
+This method is a setter for instance only
 
-sub name {
-&nbsp;&nbsp;my $either = shift;
-&nbsp;&nbsp;ref $either ? $$either # it&#39;s an instance, return name
-&nbsp;&nbsp;: &quot;an unnamed $either&quot;; # it&#39;s a class, return generic
-}
+=head2 color
+This method is a getter
 
-=cut</pre></td></tr>
-<tr><td class="h">54</td><td colspan="7"></td></tr><tr><td class="h">55</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub name {</td></tr>
-<tr><td class="h">56</td><td><div class="c3">13</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L56">13</a></div></td><td><div class="c3">1</div></td><td><div>645</div></td><td class="s">&nbsp;&nbsp;my $either = shift;</td></tr>
-<tr><td class="h">57</td><td><div class="c3">13</div></td><td><div class="c3" title="T/F"><a href="blib-lib-Animal-pm--branch.html#L57">100</a></div></td><td></td><td></td><td></td><td><div>169</div></td><td class="s">&nbsp;&nbsp;ref $either ? $either-&gt;{Name} : &quot;an unnamed $either&quot;;</td></tr>
-<tr><td class="h">58</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
-<tr><td class="h">59</td><td colspan="7"></td></tr><tr><td class="h">60 - 68</td><td colspan="6"></td><td class="s"><pre>=head2 named
-This method is a constructor for the Horse object
+=head2 set_color
+This method is a setter for instance only
 
-sub named {
-&nbsp;&nbsp;my $class = shift;
-&nbsp;&nbsp;my $name = shift;
-&nbsp;&nbsp;bless \$name, $class;
-}
-=cut</pre></td></tr>
-<tr><td class="h">69</td><td colspan="7"></td></tr><tr><td class="h">70</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub named {</td></tr>
-<tr><td class="h">71</td><td><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L71">3</a></div></td><td><div class="c3">1</div></td><td><div>1086</div></td><td class="s">&nbsp;&nbsp;my $class = shift;</td></tr>
-<tr><td class="h">72</td><td><div class="c3">3</div></td><td></td><td></td><td></td><td></td><td><div>7</div></td><td class="s">&nbsp;&nbsp;my $name = shift;</td></tr>
-<tr><td class="h">73</td><td><div class="c3">3</div></td><td></td><td></td><td></td><td></td><td><div>12</div></td><td class="s">&nbsp;&nbsp;my $self = { Name =&gt; $name, Color =&gt; $class-&gt;default_color };</td></tr>
-<tr><td class="h">74</td><td><div class="c3">3</div></td><td></td><td></td><td></td><td></td><td><div>9</div></td><td class="s">&nbsp;&nbsp;bless $self, $class;</td></tr>
-<tr><td class="h">75</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
-<tr><td class="h">76</td><td colspan="7"></td></tr><tr><td class="h">77 - 79</td><td colspan="6"></td><td class="s"><pre>=head2 set_name
-sub set_name { $_[0]-&gt;{Name} = $_[1] }
-=cut</pre></td></tr>
-<tr><td class="h">80</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub set_name {</td></tr>
-<tr><td class="h">81</td><td><div class="c3">3</div></td><td><div class="c3" title="T/F"><a href="blib-lib-Animal-pm--branch.html#L81">100</a></div></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L81">3</a></div></td><td><div class="c3">1</div></td><td><div>1310</div></td><td class="s">&nbsp;&nbsp;ref(my $self = shift) or croak &quot;instance variable needed&quot;;</td></tr>
-<tr><td class="h">82</td><td><div class="c3">2</div></td><td></td><td></td><td></td><td></td><td><div>9</div></td><td class="s">&nbsp;&nbsp;$self-&gt;{Name} = shift;</td></tr>
-<tr><td class="h">83</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
-<tr><td class="h">84</td><td colspan="7"></td></tr><tr><td class="h">85 - 114</td><td colspan="6"></td><td class="s"><pre>=head2 color
+=head2 default_color
 
-use Color::Conversions qw(color_name_to_rgb rgb_to_color_name);
-sub set_color {
-&nbsp;&nbsp;my $self = shift;
-&nbsp;&nbsp;my $new_color = shift;
-&nbsp;&nbsp;$self-&gt;{Color} = color_name_to_rgb($new_color);
-}
-sub color {
-&nbsp;&nbsp;my $self = shift;
-&nbsp;&nbsp;rgb_to_color_name($self-&gt;{Color});
-}
-sub set_color_rgb {
-&nbsp;&nbsp;my $self = shift;
-&nbsp;&nbsp;$self-&gt;{Color} = [@_];
-}
-sub get_color_rgb {
-&nbsp;&nbsp;my $self = shift;
-&nbsp;&nbsp;@{ $self-&gt;{Color} };
-}
+=head2 sound
+This method is available only for Animal sublclasses
 
-Original implementation:
+=head2 speak
+This method cannot take arguments for Animal&#39;s subclasses
 
-sub color {
-&nbsp;&nbsp;my $self = shift;
-&nbsp;&nbsp;$self-&gt;{Color};
-}
-sub color { $_[0]-&gt;{Color} }
+=head2 eat
 
-=cut</pre></td></tr>
-<tr><td class="h">115</td><td colspan="7"></td></tr><tr><td class="h">116</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub color {</td></tr>
-<tr><td class="h">117</td><td><div class="c3">5</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L117">5</a></div></td><td><div class="c3">1</div></td><td><div>600</div></td><td class="s">&nbsp;&nbsp;my $either = shift;</td></tr>
-<tr><td class="h">118</td><td><div class="c3">5</div></td><td><div class="c3" title="T/F"><a href="blib-lib-Animal-pm--branch.html#L118">100</a></div></td><td></td><td></td><td></td><td><div>23</div></td><td class="s">&nbsp;&nbsp;ref $either ? $either-&gt;{Color} : $either-&gt;default_color;</td></tr>
-<tr><td class="h">119</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
-<tr><td class="h">120</td><td colspan="7"></td></tr><tr><td class="h">121 - 159</td><td colspan="6"></td><td class="s"><pre>=head2 set_color
-
-# Return the previous value
-sub set_color {
-&nbsp;&nbsp;my $self = shift;
-&nbsp;&nbsp;my $old = $self-&gt;{Color};
-&nbsp;&nbsp;$self-&gt;{Color} = shift;
-&nbsp;&nbsp;$old;
-}
-
-sub set_color {
-&nbsp;&nbsp;my $self = shift;
-&nbsp;&nbsp;if (defined wantarray) {
-&nbsp;&nbsp;&nbsp;&nbsp;# this method call is not in void context, so
-&nbsp;&nbsp;&nbsp;&nbsp;# the return value matters
-&nbsp;&nbsp;&nbsp;&nbsp;my $old = $self-&gt;{Color};
-&nbsp;&nbsp;&nbsp;&nbsp;$self-&gt;{Color} = shift;
-&nbsp;&nbsp;&nbsp;&nbsp;$old;
-&nbsp;&nbsp;} else {
-&nbsp;&nbsp;&nbsp;&nbsp;# this method call is in void context
-&nbsp;&nbsp;&nbsp;&nbsp;$self-&gt;{Color} = shift;
-&nbsp;&nbsp;}
-}
-# Return the object itself
-sub set_color {
-&nbsp;&nbsp;my $self = shift;
-&nbsp;&nbsp;$self-&gt;{Color} = shift;
-&nbsp;&nbsp;$self;
-}
-
-Original implementation:
-sub set_color {
-&nbsp;&nbsp;my $self = shift;
-&nbsp;&nbsp;$self-&gt;{Color} = shift;
-}
-
-sub set_color { $_[0]-&gt;{Color} = $_[1] }
-
-=cut</pre></td></tr>
-<tr><td class="h">160</td><td colspan="7"></td></tr><tr><td class="h">161</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub set_color {</td></tr>
-<tr><td class="h">162</td><td><div class="c3">3</div></td><td><div class="c3" title="T/F"><a href="blib-lib-Animal-pm--branch.html#L162">100</a></div></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L162">3</a></div></td><td><div class="c3">1</div></td><td><div>1299</div></td><td class="s">&nbsp;&nbsp;ref(my $self = shift) or croak &quot;instance variable needed&quot;;</td></tr>
-<tr><td class="h">163</td><td><div class="c3">2</div></td><td></td><td></td><td></td><td></td><td><div>7</div></td><td class="s">&nbsp;&nbsp;$self-&gt;{Color} = shift;</td></tr>
-<tr><td class="h">164</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
-<tr><td class="h">165</td><td colspan="7"></td></tr><tr><td class="h">166 - 168</td><td colspan="6"></td><td class="s"><pre>=head2 default_color
-
-=cut</pre></td></tr>
-<tr><td class="h">169</td><td colspan="7"></td></tr><tr><td class="h">170</td><td><div class="c3">8</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L170">8</a></div></td><td><div class="c3">1</div></td><td><div>1187</div></td><td class="s">sub default_color { &#39;brown&#39; }</td></tr>
-<tr><td class="h">171</td><td colspan="7"></td></tr><tr><td class="h">172 - 181</td><td colspan="6"></td><td class="s"><pre>=head2 speak
-First implementation:
-sub speak {
-&nbsp;&nbsp;my $class = shift;
-&nbsp;&nbsp;die &quot;animals can&#39;t talk!&quot; if @_;
-&nbsp;&nbsp;#print &quot;a $class goes &quot;, $class-&gt;sound, &quot;!\n&quot;;
-&nbsp;&nbsp;$class-&gt;SUPER::speak;
-}
-
-=cut</pre></td></tr>
-<tr><td class="h">182</td><td colspan="7"></td></tr><tr><td class="h">183</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub speak {</td></tr>
-<tr><td class="h">184</td><td><div class="c3">5</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L184">5</a></div></td><td><div class="c3">1</div></td><td><div>4276</div></td><td class="s">&nbsp;&nbsp;my $either = shift;</td></tr>
-<tr><td class="h">185</td><td><div class="c3">5</div></td><td><div class="c3" title="T/F"><a href="blib-lib-Animal-pm--branch.html#L185">100</a></div></td><td></td><td></td><td></td><td><div>27</div></td><td class="s">&nbsp;&nbsp;die &quot;animals can&#39;t talk!&quot; if @_;</td></tr>
-<tr><td class="h">186</td><td><div class="c3">4</div></td><td></td><td></td><td></td><td></td><td><div>15</div></td><td class="s">&nbsp;&nbsp;print $either-&gt;name, &#39; goes &#39;, $either-&gt;sound, &quot;\n&quot;;</td></tr>
-<tr><td class="h">187</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
-<tr><td class="h">188</td><td colspan="7"></td></tr><tr><td class="h">189 - 191</td><td colspan="6"></td><td class="s"><pre>=head2 sound
-
-=cut</pre></td></tr>
-<tr><td class="h">192</td><td colspan="7"></td></tr><tr><td class="h">193</td><td><div class="c3">2</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L193">2</a></div></td><td><div class="c3">1</div></td><td><div>58455</div></td><td class="s">sub sound { die &quot;all Animals should define a sound&quot; }</td></tr>
-<tr><td class="h">194</td><td colspan="7"></td></tr><tr><td class="h">195 - 197</td><td colspan="6"></td><td class="s"><pre>=head2 eat
-
-=cut</pre></td></tr>
-<tr><td class="h">198</td><td colspan="7"></td></tr><tr><td class="h">199</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub eat {</td></tr>
-<tr><td class="h">200</td><td><div class="c3">2</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-pm--subroutine.html#L200">2</a></div></td><td><div class="c3">1</div></td><td><div>3934</div></td><td class="s">&nbsp;&nbsp;my ($either, $food) = @_;</td></tr>
-<tr><td class="h">201</td><td><div class="c3">2</div></td><td></td><td></td><td></td><td></td><td><div>10</div></td><td class="s">&nbsp;&nbsp;print $either-&gt;name, &quot; eats $food.\n&quot;;</td></tr>
-<tr><td class="h">202</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
-<tr><td class="h">203 - 290</td><td colspan="6"></td><td class="s"><pre>=head1 AUTHOR
+=head1 AUTHOR
 
 Mauro Berlanda, C&lt;&lt; &lt;kupta at cpan.org&gt; &gt;&gt;
 
@@ -215,15 +117,11 @@ Please report any bugs or feature requests to C&lt;bug-animal at rt.cpan.org&gt;
 the web interface at L&lt;http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Animal&gt;.&nbsp;&nbsp;I will be notified, and then you&#39;ll
 automatically be notified of progress on your bug as I make changes.
 
-
-
-
 =head1 SUPPORT
 
 You can find documentation for this module with the perldoc command.
 
 &nbsp;&nbsp;&nbsp;&nbsp;perldoc Animal
-
 
 You can also look for information at:
 
@@ -247,9 +145,7 @@ L&lt;http://search.cpan.org/dist/Animal/&gt;
 
 =back
 
-
 =head1 ACKNOWLEDGEMENTS
-
 
 =head1 LICENSE AND COPYRIGHT
 
@@ -291,9 +187,8 @@ CONTRIBUTOR WILL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, OR
 CONSEQUENTIAL DAMAGES ARISING IN ANY WAY OUT OF THE USE OF THE PACKAGE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-
 =cut</pre></td></tr>
-<tr><td class="h">291</td><td colspan="7"></td></tr><tr><td class="h">292</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">1; # End of Animal</td></tr>
+<tr><td class="h">176</td><td colspan="7"></td></tr><tr><td class="h">177</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">1; # End of Animal</td></tr>
 </table>
 </body>
 </html>

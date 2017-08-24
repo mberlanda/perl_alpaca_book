@@ -1,6 +1,17 @@
 package LivingCreature {
 
+  use 5.006;
+  use strict;
+  use warnings;
+
   our $VERSION = '0.01';
+
+  sub speak {
+    my $class = shift;
+    if (@_) { print "a $class goes '@_'\n"; }
+    else { print "a $class goes ", $class->sound, "\n"; }
+  }
+}
 
 =head1 NAME
 
@@ -10,19 +21,9 @@ LivingCreature
 
 Version 0.01
 
-=cut
-
 =head1 SUBROUTINES/METHODS
 
 =head2 speak
 
 =cut
-
-  sub speak {
-    my $class = shift;
-    if (@_) { print "a $class goes '@_'\n"; }
-    else { print "a $class goes ", $class->sound, "\n"; }
-  }
-}
-
 1; # End of LivingCreature

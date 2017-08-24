@@ -1,7 +1,8 @@
 package Mouse {
+
+  use 5.006;
   use strict;
   use warnings;
-
   use parent qw(Animal);
 
   our $VERSION = '0.01';
@@ -10,8 +11,6 @@ package Mouse {
 
   sub speak {
     my $class = shift;
-    # print "a $class goes ", $class->sound, "!\n";
-    # $class->Animal::speak(@_);
     $class->SUPER::speak;
     print "[but you can barely hear it!]\n";
   }

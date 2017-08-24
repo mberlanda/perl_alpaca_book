@@ -5,7 +5,7 @@ use warnings;
 use Test::More tests => 3;
 
 BEGIN {
-  require_ok( 'Cow' ) || BAIL_OUT(); # print "Bail out!\n";
+  require_ok( 'Cow' ) || BAIL_OUT();
 }
 diag( "Testing Cow $Cow::VERSION, Perl $], $^X" );
 
