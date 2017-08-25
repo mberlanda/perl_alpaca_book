@@ -4,6 +4,31 @@ use 5.006;
 use strict;
 use warnings;
 
+use Exporter qw(import);
+our @EXPORT = qw(sum shuffle);
+
+our $VERSION = '0.01';
+
+sub sum {
+  my $sum;
+  foreach my $num ( grep { /\A-?\d+\.*\d*\z/ } @_ ) {
+    $sum += $num;
+  }
+  $sum;
+}
+
+sub shuffle {
+  my @deck = @_;
+  return unless @deck;
+
+  my $i = @deck;
+  while( --$i ) {
+    my $j = int rand ($i+1);
+    @deck[$i,$j] = @deck[$j,$i];
+  }
+  @deck;
+}
+
 =head1 NAME
 
 My::List::Util - The great new My::List::Util!
@@ -11,11 +36,6 @@ My::List::Util - The great new My::List::Util!
 =head1 VERSION
 
 Version 0.01
-
-=cut
-
-our $VERSION = '0.01';
-
 
 =head1 SYNOPSIS
 
@@ -37,31 +57,7 @@ if you don't export anything, such as for a purely object-oriented module.
 
 =head2 sum
 
-=cut
-
-sub sum {
-  my $sum;
-  foreach my $num ( grep { /\A-?\d+\.*\d*\z/ } @_ ) {
-    $sum += $num;
-  }
-  $sum;
-}
-
 =head2 shuffle
-
-=cut
-
-sub shuffle {
-  my @deck = @_;
-  return unless @deck;
-
-  my $i = @deck;
-  while( --$i ) {
-    my $j = int rand ($i+1);
-    @deck[$i,$j] = @deck[$j,$i];
-  }
-  @deck;
-}
 
 =head1 AUTHOR
 
@@ -73,15 +69,11 @@ Please report any bugs or feature requests to C<bug-my-list-util at rt.cpan.org>
 the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=My-List-Util>.  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
 
-
-
-
 =head1 SUPPORT
 
 You can find documentation for this module with the perldoc command.
 
     perldoc My::List::Util
-
 
 You can also look for information at:
 
@@ -105,9 +97,7 @@ L<http://search.cpan.org/dist/My-List-Util/>
 
 =back
 
-
 =head1 ACKNOWLEDGEMENTS
-
 
 =head1 LICENSE AND COPYRIGHT
 
@@ -148,7 +138,6 @@ YOUR LOCAL LAW. UNLESS REQUIRED BY LAW, NO COPYRIGHT HOLDER OR
 CONTRIBUTOR WILL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, OR
 CONSEQUENTIAL DAMAGES ARISING IN ANY WAY OUT OF THE USE OF THE PACKAGE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 
 =cut
 
