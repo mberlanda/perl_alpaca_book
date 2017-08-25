@@ -1,0 +1,42 @@
+=head1 ch 15 Exercises
+
+=head2 Ex 01
+
+Write a module named MyDate that has an AUTOLOAD method
+which handles the calls to the methods named day , month , and year , returning the
+appropriate value for each one. For any other method, the AUTOLOAD should
+Carp about the unknown method name. Write a script that uses your module and
+prints the values for the date, month, and year.
+
+=head2 Ex 02
+Starting with the script you wrote for the previous exercise, add a
+UNIVERSAL::debug function that prints a timestamp before the message you pass to
+it. Call the debug method on the MyDate object. What happens? How does this get
+around the AUTOLOAD mechanism?
+
+=head2 Possible refactoring on Animal package
+
+  package Animal {
+    ...
+    use Class::MethodMaker
+      new_with_init => 'new',
+      abstract => [qw(sound)],
+      get_set => [qw(age color height name)]
+    ;
+
+    sub init {
+      my $self = shift;
+      $self->set_color($self->default_color);
+    }
+    sub named {
+      my $self = shift->new;
+      $self->set_name(shift);
+      $self;
+    }
+    sub generic_name {
+      my $either = shift;
+      ref $either ? $either->{Name} : "an unnamed $either";
+    }
+  }
+
+=cut
