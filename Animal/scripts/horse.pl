@@ -19,3 +19,9 @@ use Horse;
   $tv_horse->set_color('black-and-white');
   print $tv_horse->name, ' is colored ', $tv_horse->color, "\n";
 }
+
+{
+  my @tv_horses = map { Horse->named($_) } ('Trigger', 'Mr. Ed');
+  $_->eat('an apple') for @tv_horses;
+  print "End of program.\n";
+}

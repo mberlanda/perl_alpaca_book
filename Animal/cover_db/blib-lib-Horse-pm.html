@@ -26,13 +26,18 @@ http://www.pjcj.net
 <table>
 <tr><th>line</th><th>stmt</th><th>bran</th><th>cond</th><th>sub</th><th>pod</th><th>time</th><th>code</th></tr>
 <tr><td class="h">1</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">package Horse;</td></tr>
-<tr><td class="h">2</td><td colspan="7"></td></tr><tr><td class="h">3</td><td><div class="c3">2</div><div class="c3">2</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Horse-pm--subroutine.html#L3">2</a></div></td><td></td><td><div>34691</div><div>4</div></td><td class="s">use 5.006;</td></tr>
-<tr><td class="h">4</td><td><div class="c3">2</div><div class="c3">2</div><div class="c3">2</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Horse-pm--subroutine.html#L4">2</a></div></td><td></td><td><div>8</div><div>3</div><div>35</div></td><td class="s">use strict;</td></tr>
-<tr><td class="h">5</td><td><div class="c3">2</div><div class="c3">2</div><div class="c3">2</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Horse-pm--subroutine.html#L5">2</a></div></td><td></td><td><div>7</div><div>3</div><div>37</div></td><td class="s">use warnings;</td></tr>
-<tr><td class="h">6</td><td><div class="c3">2</div><div class="c3">2</div><div class="c3">2</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Horse-pm--subroutine.html#L6">2</a></div></td><td></td><td><div>130</div><div>167</div><div>6</div></td><td class="s">use parent qw(Animal);</td></tr>
+<tr><td class="h">2</td><td colspan="7"></td></tr><tr><td class="h">3</td><td><div class="c3">3</div><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Horse-pm--subroutine.html#L3">3</a></div></td><td></td><td><div>49938</div><div>7</div></td><td class="s">use 5.006;</td></tr>
+<tr><td class="h">4</td><td><div class="c3">3</div><div class="c3">3</div><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Horse-pm--subroutine.html#L4">3</a></div></td><td></td><td><div>9</div><div>2</div><div>32</div></td><td class="s">use strict;</td></tr>
+<tr><td class="h">5</td><td><div class="c3">3</div><div class="c3">3</div><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Horse-pm--subroutine.html#L5">3</a></div></td><td></td><td><div>7</div><div>3</div><div>50</div></td><td class="s">use warnings;</td></tr>
+<tr><td class="h">6</td><td><div class="c3">3</div><div class="c3">3</div><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Horse-pm--subroutine.html#L6">3</a></div></td><td></td><td><div>8</div><div>3</div><div>8</div></td><td class="s">use parent qw(Animal);</td></tr>
 <tr><td class="h">7</td><td colspan="7"></td></tr><tr><td class="h">8</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">our $VERSION = &#39;0.01&#39;;</td></tr>
-<tr><td class="h">9</td><td colspan="7"></td></tr><tr><td class="h">10</td><td><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Horse-pm--subroutine.html#L10">3</a></div></td><td><div class="c3">1</div></td><td><div>44318</div></td><td class="s">sub sound { &#39;neigh&#39; }</td></tr>
-<tr><td class="h">11</td><td colspan="7"></td></tr><tr><td class="h">12 - 20</td><td colspan="6"></td><td class="s"><pre>=head1 NAME
+<tr><td class="h">9</td><td colspan="7"></td></tr><tr><td class="h">10</td><td><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Horse-pm--subroutine.html#L10">3</a></div></td><td><div class="c3">1</div></td><td><div>45801</div></td><td class="s">sub sound { &#39;neigh&#39; }</td></tr>
+<tr><td class="h">11</td><td colspan="7"></td></tr><tr><td class="h">12</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub DESTROY {</td></tr>
+<tr><td class="h">13</td><td><div class="c3">8</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Horse-pm--subroutine.html#L13">8</a></div></td><td></td><td><div>1720</div></td><td class="s">&nbsp;&nbsp;my $self = shift;</td></tr>
+<tr><td class="h">14</td><td><div class="c3">8</div></td><td><div class="c3" title="T/F"><a href="blib-lib-Horse-pm--branch.html#L14">100</a></div></td><td></td><td></td><td></td><td><div>56</div></td><td class="s">&nbsp;&nbsp;$self-&gt;SUPER::DESTROY if $self-&gt;can( &#39;SUPER::DESTROY&#39; );</td></tr>
+<tr><td class="h">15</td><td><div class="c3">8</div></td><td></td><td></td><td></td><td></td><td><div>27</div></td><td class="s">&nbsp;&nbsp;print &quot;[&quot;, $self-&gt;name, &quot; has gone off to the glue factory.]\n&quot;;</td></tr>
+<tr><td class="h">16</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
+<tr><td class="h">17</td><td colspan="7"></td></tr><tr><td class="h">18 - 26</td><td colspan="6"></td><td class="s"><pre>=head1 NAME
 
 Horse
 
@@ -41,7 +46,7 @@ Horse
 Version 0.01
 
 =cut</pre></td></tr>
-<tr><td class="h">21</td><td colspan="7"></td></tr><tr><td class="h">22 - 38</td><td colspan="6"></td><td class="s"><pre>=head1 SYNOPSIS
+<tr><td class="h">27</td><td colspan="7"></td></tr><tr><td class="h">28 - 44</td><td colspan="6"></td><td class="s"><pre>=head1 SYNOPSIS
 
 &nbsp;&nbsp;&nbsp;&nbsp;use Horse;
 &nbsp;&nbsp;&nbsp;&nbsp;my $foo = Horse-&gt;named(&quot;blahblah&quot;);
@@ -58,7 +63,7 @@ if you don&#39;t export anything, such as for a purely object-oriented module.
 =head2 sound
 
 =cut</pre></td></tr>
-<tr><td class="h">39</td><td colspan="7"></td></tr><tr><td class="h">40 - 47</td><td colspan="6"></td><td class="s"><pre>=head2 name
+<tr><td class="h">45</td><td colspan="7"></td></tr><tr><td class="h">46 - 53</td><td colspan="6"></td><td class="s"><pre>=head2 name
 
 sub name {
 &nbsp;&nbsp;my $self = shift;
@@ -66,7 +71,7 @@ sub name {
 }
 
 =cut</pre></td></tr>
-<tr><td class="h">48</td><td colspan="7"></td></tr><tr><td class="h">49 - 56</td><td colspan="6"></td><td class="s"><pre>=head2 named
+<tr><td class="h">54</td><td colspan="7"></td></tr><tr><td class="h">55 - 62</td><td colspan="6"></td><td class="s"><pre>=head2 named
 This method is a constructor for the Horse object
 sub named {
 &nbsp;&nbsp;my ($class, $name) = @_;
@@ -74,7 +79,7 @@ sub named {
 }
 
 =cut</pre></td></tr>
-<tr><td class="h">57</td><td colspan="7"></td></tr><tr><td class="h">58 - 140</td><td colspan="6"></td><td class="s"><pre>=head1 AUTHOR
+<tr><td class="h">63</td><td colspan="7"></td></tr><tr><td class="h">64 - 146</td><td colspan="6"></td><td class="s"><pre>=head1 AUTHOR
 
 Mauro Berlanda, C&lt;&lt; &lt;kupta at cpan.org&gt; &gt;&gt;
 
@@ -157,7 +162,7 @@ CONSEQUENTIAL DAMAGES ARISING IN ANY WAY OUT OF THE USE OF THE PACKAGE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =cut</pre></td></tr>
-<tr><td class="h">141</td><td colspan="7"></td></tr><tr><td class="h">142</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">1; # End of Horse</td></tr>
+<tr><td class="h">147</td><td colspan="7"></td></tr><tr><td class="h">148</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">1; # End of Horse</td></tr>
 </table>
 </body>
 </html>

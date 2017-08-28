@@ -23,3 +23,4 @@ Tom Phoenix, 978-1-449-39309-0.
 - [ch15 Objects with Data](ch15/)
 - [ch16 Some Advanced Object Topics](ch16/)
 - [ch17 Exporter](ch17/)
+- [ch18 Object Destruction](ch18/)

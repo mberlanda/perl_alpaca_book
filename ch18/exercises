@@ -1,0 +1,19 @@
+=head2 ch18 Exercises
+
+=head1 Ex 01
+
+Modify the RaceHorse class to get the previous standings from persistent
+storage (e.g., DBM, Storable , JSON , and so on) when the horse is created,
+and update the standings when the horse is destroyed.
+
+For example, running this program four times:
+  my $runner = RaceHorse->named('Billy Boy');
+  $runner->won;
+  print $runner->name, ' has standings ', $runner->standings, ".\n";
+should show four additional wins. Make sure that a RaceHorse still does everything
+a normal Horse does otherwise.
+
+  Animal/ $ perl -t -Ilib t/RaceHorse.t
+  Animal/ $ perl -t -Ilib scripts/race-horse.pl
+
+=cut

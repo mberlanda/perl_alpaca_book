@@ -5,12 +5,28 @@ use strict;
 use warnings;
 use Carp qw(croak);
 use parent qw(LivingCreature);
+use File::Temp qw(tempfile);
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
+
+sub DESTROY {
+  my $self = shift;
+  if ($self->{temp_filename}){
+    my $fh = $self->{temp_fh};
+    close $fh;
+    unlink $self->{temp_filename};
+  }
+  print '[', $self->name, " has died.]\n";
+}
 
 sub named {
   my ($class, $name) = @_;
   my $self = { Name => $name, Color => $class->default_color };
+
+  my ($fh, $filename) = tempfile();
+  $self->{temp_fh} = $fh;
+  $self->{temp_filename} = $filename;
+
   bless $self, $class;
 }
 

@@ -9,6 +9,12 @@ our $VERSION = '0.01';
 
 sub sound { 'neigh' }
 
+sub DESTROY {
+  my $self = shift;
+  $self->SUPER::DESTROY if $self->can( 'SUPER::DESTROY' );
+  print "[", $self->name, " has gone off to the glue factory.]\n";
+}
+
 =head1 NAME
 
 Horse
