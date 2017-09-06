@@ -1,6 +1,6 @@
-=head2 ch17 Exercises
+=head1 ch17 Exercises
 
-=head1 Ex 01
+=head2 Ex 01
 Take the Oogaboogoo library you created in Chapter 11, Exercise 1,
 and turn it into a module you can bring in with use . Alter the invoking code so that
 it uses the imported routines (rather than the full package specification as you did
@@ -9,14 +9,14 @@ before), and test it.
   $ cd ch17
   $ perl -t -Ilib oogabooogoo.t
 
-=head Ex 02
+=head2 Ex 02
 Modify your answer to Exercise 1 to use an export tag named “all”.
 When the user uses “all”, your module should import all subroutine names:
 use Oogaboogoo::date qw(:all);
 
   $ perl -t -Ilib oogabooogoo.t
 
-=head Ex 03
+=head2 Ex 03
 Modify the My::List::Util module you created in Chapter 14 so it
 exports its sum and shuffle .
 

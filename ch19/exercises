@@ -1,0 +1,17 @@
+=head1 ch19 Exercises
+
+=head2 Ex 01
+
+Reimplement your Animal classes as Moose classes, making the sub-
+classes extend Animal . Adjust your documentation and tests to handle the changes.
+Ensure you update your build file for any new dependencies.
+  ch19/ perl -t -Ilib inherited.t
+
+=head2 Ex 02
+Adjust the distribution you created in Exercise 1 to use Animal as a
+role instead of a parent class.
+  ch19/ perl -t -Ilib role.t
+
+All changes were implemented in the Animal-Moose distribution
+
+=cut

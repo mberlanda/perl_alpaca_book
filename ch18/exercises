@@ -1,6 +1,6 @@
-=head2 ch18 Exercises
+=head1 ch18 Exercises
 
-=head1 Ex 01
+=head2 Ex 01
 
 Modify the RaceHorse class to get the previous standings from persistent
 storage (e.g., DBM, Storable , JSON , and so on) when the horse is created,
