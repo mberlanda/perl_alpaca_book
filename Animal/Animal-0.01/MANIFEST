@@ -1,0 +1,20 @@
+Build.PL
+Changes
+lib/Animal.pm
+lib/Cow.pm
+lib/Horse.pm
+lib/LivingCreature.pm
+lib/Mouse.pm
+lib/Person.pm
+lib/Sheep.pm
+MANIFEST			This list of files
+README
+scripts/barnyard.pl
+scripts/mouse
+scripts/pasture
+scripts/person.pl
+t/00-load.t
+t/manifest.t
+t/pod-coverage.t
+t/pod.t
+xt/boilerplate.t

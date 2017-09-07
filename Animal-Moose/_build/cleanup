@@ -1,5 +1,6 @@
 do{ my $x = {
        'Animal-*' => 1,
+       'Animal-Moose-0.02' => 1,
        'blib' => 1,
        'cover_db' => 1,
        'coverage' => 1

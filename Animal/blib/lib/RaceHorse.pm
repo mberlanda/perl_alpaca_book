@@ -3,9 +3,9 @@ package RaceHorse {
   use parent qw(Horse);
 
   our $VERSION = '0.01';
+
   dbmopen (our %STANDINGS, "standings", 0666)
     or die "Cannot access standings dbm: $!";
-
 
   sub named {
     my $self = shift->SUPER::named(@_);

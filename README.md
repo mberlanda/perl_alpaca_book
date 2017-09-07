@@ -25,3 +25,4 @@ Tom Phoenix, 978-1-449-39309-0.
 - [ch17 Exporter](ch17/)
 - [ch18 Object Destruction](ch18/)
 - [ch19 Introduction to Moose](ch19/)
+- [ch20 Advanced Testing](ch20/)

@@ -1,0 +1,39 @@
+=head1 Advanced Testing
+
+=over 7
+
+=item * Skipping Test
+
+  $ perl -t skip.t
+
+=item * Testing Object-Oriented Features
+
+  $ perl -t ooo.t
+
+=item * Grouping Tests
+
+  $ perl -t groupings.t
+
+=item * Testing Large Strings
+
+  $ perl -t large_strings.t
+
+=item * Testing Files
+
+  $ perl -t files.t
+
+=item * Testing STDOUT or STDERR
+
+  $ perl -t output.t
+
+=item * Using Mock Objects
+
+  $ perl -t mock.t
+
+=item * Writing Our Own Test::* Modules
+
+  $ perl -t -Ilib custom_modules.t
+
+=back
+
+=cut

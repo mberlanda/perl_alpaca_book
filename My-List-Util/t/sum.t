@@ -2,10 +2,11 @@
 use 5.006;
 use strict;
 use warnings;
-use Test::More tests => 9;
+use Test::More tests => 12;
 
 BEGIN {
   use_ok( 'My::List::Util' ) || BAIL_OUT();
+  use_ok( 'Test::My::List::Util' ) || BAIL_OUT();
 }
 
 ok( defined &sum, 'sum() is defined' );
@@ -17,3 +18,6 @@ is( sum( 3.14, 2.2 ), 5.34, '3.14 + 2.2 is 5.34' );
 is( sum(), undef, 'No arguments returns undef' );
 is( sum( qw(a b) ), undef, 'All bad args gives undef' );
 is( sum( qw(a b 4 5) ), 9, 'Some good args works' );
+
+sum_ok( sum( qw(a b 4 5) ), 9, 'sum_ok() works with labels');
+sum_ok( sum( qw(a b 4 5) ), 9);

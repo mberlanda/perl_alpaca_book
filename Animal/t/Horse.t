@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::More tests => 7;
+use Test::More tests => 11;
 use Test::Output;
 
 BEGIN {
@@ -50,4 +50,12 @@ is(Horse->sound(), 'neigh', 'Horse\'s sound() should be \'neigh\'');
   local *Animal::DESTROY;
   stdout_is( sub { undef $tv_horse }, "[Mr. Ed has gone off to the glue factory.]\n",
       'Horse DESTROY() when SUPER::DESTROY is not defined');
+}
+
+{
+  # Testing Object-Oriented Features
+  my $trigger = Horse->named('Trigger');
+  isa_ok($trigger, 'Horse');
+  isa_ok($trigger, 'Animal');
+  can_ok($trigger, $_) for qw(eat color);
 }

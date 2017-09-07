@@ -1,0 +1,26 @@
+=head1 ch20 Exercises
+
+=head2 Ex 01
+
+Use the Test::File module to check for the existence and readability
+of the /etc/hosts file on Unix and the C:\windows\system32\drivers\etc\hosts file on
+Windows (or, if you don’t have those files, choose one you do have). Skip the test
+for the platform you are not on by inspecting the value of $^O (capital O) variable.
+You can add this test file to your distribution for My::List::Util or use it as a
+standalone program.
+
+  /My-List-Util $ perl -t t/hosts.t
+
+
+=head2 Ex 02
+Write your own test module ( Test::My::List::Util ), that has a single
+test function ( sum_ok ), which takes two arguments: the actual sum and the expected
+sum. Print a diagnostic message if the two do not match:
+  my $sum = sum( 2, 2 );
+  sum_ok( $sum, 4, 'The sums match' );
+Besides the example in this chapter, you can also look at the source for
+Test::File (or most other Test::* modules) to get ideas for your module.
+
+  /My-List-Util $ perl -t -Ilib t/sum.t
+
+=cut

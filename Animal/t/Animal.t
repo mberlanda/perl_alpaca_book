@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::More tests => 34;
+use Test::More tests => 30;
 use Test::Output;
 
 BEGIN {
@@ -13,35 +13,35 @@ diag( "Testing Animal $Animal::VERSION, Perl $], $^X" );
 # they have to be defined in Animal.pm
 ok( defined &Animal::named, 'Animal::named is defined' );
 ok( defined &Animal::name, 'Animal::name is defined' );
-ok( defined &Animal::set_name, 'Animal::set_name is defined' );
 ok( defined &Animal::color, 'Animal::color is defined' );
-ok( defined &Animal::set_color, 'Animal::set_color is defined' );
 ok( defined &Animal::default_color, 'Animal::default_color is defined' );
-ok( defined &Animal::sound, 'Animal::sound is defined' );
-ok( defined &Animal::speak, 'Animal::speak is defined' );
 ok( defined &Animal::eat, 'Animal::eat is defined' );
 
 ## Class Methods
-# Methods available for Subclasses only
 
-{
+# Methods available for Subclasses only
+subtest 'sound() works for subclasses only' => sub {
+  ok( defined &Animal::sound, 'Animal::sound is defined' );
   eval { Animal->sound() } or my $at = $@;
   like( $at, qr/should define/, 'sound() dies with a message' );
-}
-{
+};
+subtest 'speak() works for subclasses only' => sub {
+  ok( defined &Animal::speak, 'Animal::speak is defined' );
   eval { Animal->speak() } or my $at = $@;
   like( $at, qr/should define/, 'speak() dies with a message' );
-}
+};
 
 # Methods available for Instances only
-{
+subtest 'set_color() works for instances only' => sub {
+  ok( defined &Animal::set_color, 'Animal::set_color is defined' );
   eval { Animal->set_color("blue") } or my $at = $@;
   like( $at, qr/instance variable needed/, 'set_color() dies with a message' );
-}
-{
+};
+subtest 'set_name() works for instances only' => sub {
+  ok( defined &Animal::set_name, 'Animal::set_name is defined' );
   eval { Animal->set_name("Mr. Ed") } or my $at = $@;
   like( $at, qr/instance variable needed/, 'set_color() dies with a message' );
-}
+};
 
 # Class methods working
 stdout_is(
